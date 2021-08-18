@@ -1,0 +1,9 @@
+{
+    "success": false,
+    "data": {
+        "error": "No store selected",
+        "login": false,
+        "message": "login failed"
+    },
+    "message": "login failed"
+}

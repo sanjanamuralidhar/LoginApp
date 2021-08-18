@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "data": {
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvc3BhZG1pbi5pbmRpZ2l0YWwuY29tcGFueVwvYXBpXC9sb2dpbiIsImlhdCI6MTYyOTI3MDQ2MSwiZXhwIjoxNjI5Mjc0MDYxLCJuYmYiOjE2MjkyNzA0NjEsImp0aSI6InYwNTJGSUJWOGZ5TG5PQUoiLCJzdWIiOjE3NTUsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.6-fUyn2KizCDC49FTrKls4UKKnZ80g2hP3A6IrVr91Q",
+      "login": true,
+      "employee_id": 1755,
+      "name": "Waiter Waitress",
+      "message": "login success"
+  },
+  "message": "login success"
+}
