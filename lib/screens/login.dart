@@ -1,33 +1,41 @@
+
 import 'package:LoginApp/Bloc/loginBloc/bloc.dart';
 import 'package:LoginApp/Widget/appButton.dart';
 import 'package:LoginApp/screens/mapPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key key}) : super(key: key);
+// class LoginPage extends StatefulWidget {
+//   const LoginPage({Key key}) : super(key: key);
 
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
+//   @override
+//   _LoginPageState createState() => _LoginPageState();
+// }
 
-class _LoginPageState extends State<LoginPage> {
+class LoginPage extends StatelessWidget {
   final _textIDController = TextEditingController();
   final _textPassController = TextEditingController();
   LoginBloc _loginBloc;
 
-  @override
-  void initState() {
-    _loginBloc = BlocProvider.of<LoginBloc>(context);
-    // _textIDController.text = "admin";
-    // _textPassController.text = "admin";
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   _loginBloc = BlocProvider.of<LoginBloc>(context);
+  //   // _textIDController.text = "admin";
+  //   // _textPassController.text = "admin";
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
+    _loginBloc = BlocProvider.of<LoginBloc>(context);
+  //  BlocProvider(
+//         create: (context) => LoginBloc(),
+//         child: Builder(
+//           builder: (BuildContext context) {
+//             // ignore: close_sinks
+//             final LoginBloc _loginBloc =
+//                 BlocProvider.of<LoginBloc>(context);
     return Scaffold(
-      // backgroundColor: Colors.green[100],
         body: SafeArea(
       child: Container(
         child: Column(
@@ -112,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                   return BlocListener<LoginBloc, LoginState>(
                     listener: (context, loginListener) {
                       if (loginListener is LoginFail) {
-                        _showMessage(loginListener.message);
+                        _showMessage(context,loginListener.message);
                       }
                       if (loginListener is LoginSuccess) {
                         Navigator.push(
@@ -123,12 +131,12 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     child: AppButton(
                       onPressed: () {
-                        setState(() {
+                        // setState(() {
                           _loginBloc.add(OnLogin(
                             username: _textIDController.text,
                             password: _textPassController.text,
                           ));
-                        });
+                        // });
                       },
                       color: Colors.blue,
                       text: 'Login',
@@ -145,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
     ));
   }
 
-  Future<void> _showMessage(String message) async {
+  Future<void> _showMessage(BuildContext context,String message) async {
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
