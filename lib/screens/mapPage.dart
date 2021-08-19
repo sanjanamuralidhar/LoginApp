@@ -7,6 +7,7 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(automaticallyImplyLeading: true,),
       body: SafeArea(child: Center(
         child: InkWell(
           onTap: (){
